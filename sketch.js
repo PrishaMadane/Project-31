@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 
 
 var engine,world;
-var ground;
+//var ground;
 var particles=[];
 var plinkos=[];
 var divisions=[];
@@ -15,31 +15,33 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
   
-  ground = new Ground(400,790,800,20);
-  
+ // ground = new Ground(400,790,800,20);
+
   for(var k = 0; k <=width; k=k +80){
     divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
   }
   
-  for (var j = 75; j <=width; j=j+50)
+  for (var j = 40; j <=width; j=j+50)
   {
-     plinkos.push(new Plinko(j,75));
+     plinkos.push(new Plinkos(j,75));
   }
 
-  for (var j = 50; j<= width-10; j=j+50)
+  for (var j = 15; j <=width-10; j=j+50)
   {
-      plinkos.push(new Plinko(j,175));
+      plinkos.push(new Plinkos(j,175));
   }
   
-  for (var j = 75; j<=width; j=j+50)
+  for (var j = 40; j <=width; j=j+50)
   {
-    plinkos.push(new Plinko(j,375));
+    plinkos.push(new Plinkos(j,275));
   }
 
-  for (var j = 50; j <width-10; j=j+50 )
+  for (var j = 15; j <=width-10; j=j+50 )
   {
-     plinkos.push(new Plinko(j,375));
+     plinkos.push(new Plinkos(j,375));
   }
+
+  
    
 }
 
@@ -66,7 +68,6 @@ function draw() {
   }
 
  
-
   
   drawSprites();
 
