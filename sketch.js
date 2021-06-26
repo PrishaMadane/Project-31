@@ -46,21 +46,26 @@ function setup() {
 function draw() {
   background(0);  
   Engine.update(engine);
-  ground.display();
- 
- for (var i = 0; i< plinkos.length; i++){
-  plinkos[i].display();
-}
-if (frameCount%60===0){
-  particles.push(new Particle(random(width/2-10, width/2+10), 10,10));
-}
-
-  for ( var j =0; j< particles.length; j++){
-    particles[j].display();
-  }
-  for (var k = 0; k< divisions.length; k++){
+  
+ // ground.display();
+  
+  for (var k = 0; k < divisions.length; k++){
     divisions[k].display();
   }
+
+  for (var j = 0; j < plinkos.length; j++){
+    plinkos[j].display();
+   }
+
+   if (frameCount%60===0){
+    particles.push(new Particle(random(width/2-30, width/2+30), 10,10));
+  }
+  
+  for ( var i=0; i < particles.length; i++){
+    particles[i].display();
+  }
+
+ 
 
   
   drawSprites();
